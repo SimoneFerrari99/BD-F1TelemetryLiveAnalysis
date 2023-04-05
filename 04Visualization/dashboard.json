@@ -1,0 +1,1100 @@
+{
+	"annotations": {
+		"list": [
+			{
+				"builtIn": 1,
+				"datasource": {
+					"type": "grafana",
+					"uid": "-- Grafana --"
+				},
+				"enable": true,
+				"hide": true,
+				"iconColor": "rgba(0, 211, 255, 1)",
+				"name": "Annotations & Alerts",
+				"target": {
+					"limit": 100,
+					"matchAny": false,
+					"tags": [],
+					"type": "dashboard"
+				},
+				"type": "dashboard"
+			}
+		]
+	},
+	"editable": true,
+	"fiscalYearStartMonth": 0,
+	"graphTooltip": 1,
+	"id": 14,
+	"links": [],
+	"liveNow": true,
+	"panels": [
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "thresholds"
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							},
+							{
+								"color": "yellow",
+								"value": 100
+							},
+							{
+								"color": "#EF843C",
+								"value": 200
+							},
+							{
+								"color": "#E24D42",
+								"value": 300
+							}
+						]
+					},
+					"unit": "velocitykmh"
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 3,
+				"x": 0,
+				"y": 0
+			},
+			"id": 8,
+			"options": {
+				"orientation": "auto",
+				"reduceOptions": {
+					"calcs": ["lastNotNull"],
+					"fields": "",
+					"values": false
+				},
+				"showThresholdLabels": false,
+				"showThresholdMarkers": true
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"parsedQuery": "telemetry.telemetry.find({}, {\"Speed\":1,\"_id\":0})",
+					"query": "telemetry.telemetry.find({}, {Speed: 1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Speed",
+			"type": "gauge"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "thresholds"
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "percentage",
+						"steps": [
+							{
+								"color": "red",
+								"value": null
+							},
+							{
+								"color": "#EAB839",
+								"value": 20
+							},
+							{
+								"color": "orange",
+								"value": 60
+							},
+							{
+								"color": "green",
+								"value": 90
+							}
+						]
+					},
+					"unit": "percent"
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 3,
+				"x": 3,
+				"y": 0
+			},
+			"id": 9,
+			"options": {
+				"orientation": "auto",
+				"reduceOptions": {
+					"calcs": ["lastNotNull"],
+					"fields": "",
+					"values": false
+				},
+				"showThresholdLabels": false,
+				"showThresholdMarkers": true
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"parsedQuery": "telemetry.telemetry.find({}, {\"Throttle\":1,\"_id\":0})",
+					"query": "telemetry.telemetry.find({}, {Throttle: 1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Throttle",
+			"type": "gauge"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "thresholds"
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "percentage",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							},
+							{
+								"color": "yellow",
+								"value": 20
+							},
+							{
+								"color": "orange",
+								"value": 60
+							},
+							{
+								"color": "red",
+								"value": 90
+							}
+						]
+					},
+					"unit": "RPM"
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 3,
+				"x": 6,
+				"y": 0
+			},
+			"id": 10,
+			"options": {
+				"orientation": "auto",
+				"reduceOptions": {
+					"calcs": ["lastNotNull"],
+					"fields": "",
+					"values": false
+				},
+				"showThresholdLabels": false,
+				"showThresholdMarkers": true
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"parsedQuery": "telemetry.telemetry.find({}, {\"RPM\":1,\"_id\":0})",
+					"query": "telemetry.telemetry.find({}, {RPM: 1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "RPM",
+			"type": "gauge"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "thresholds"
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							}
+						]
+					}
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 6,
+				"x": 9,
+				"y": 0
+			},
+			"id": 14,
+			"options": {
+				"colorMode": "value",
+				"graphMode": "area",
+				"justifyMode": "center",
+				"orientation": "auto",
+				"reduceOptions": {
+					"calcs": ["lastNotNull"],
+					"fields": "/^Time$/",
+					"values": false
+				},
+				"textMode": "auto"
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"parsedQuery": "telemetry.telemetry.find({}, {\"Time\":1,\"_id\":0}).sort({_id:-1}).limit(1)",
+					"query": "telemetry.telemetry.find({}, {Time: 1, _id:0}).sort({_id:-1}).limit(1)",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Lap Time",
+			"type": "stat"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "thresholds"
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "dark-red",
+								"value": null
+							},
+							{
+								"color": "light-red",
+								"value": 2
+							},
+							{
+								"color": "semi-dark-orange",
+								"value": 3
+							},
+							{
+								"color": "super-light-orange",
+								"value": 4
+							},
+							{
+								"color": "semi-dark-yellow",
+								"value": 5
+							},
+							{
+								"color": "super-light-yellow",
+								"value": 6
+							},
+							{
+								"color": "light-green",
+								"value": 7
+							},
+							{
+								"color": "dark-green",
+								"value": 8
+							}
+						]
+					}
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 3,
+				"x": 15,
+				"y": 0
+			},
+			"id": 12,
+			"options": {
+				"orientation": "auto",
+				"reduceOptions": {
+					"calcs": ["lastNotNull"],
+					"fields": "",
+					"values": false
+				},
+				"showThresholdLabels": false,
+				"showThresholdMarkers": true
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"parsedQuery": "telemetry.telemetry.find({}, {\"nGear\":1,\"_id\":0})",
+					"query": "telemetry.telemetry.find({}, {nGear: 1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Gear",
+			"type": "gauge"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "thresholds"
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "percentage",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							},
+							{
+								"color": "red",
+								"value": 50
+							}
+						]
+					},
+					"unit": "percent"
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 3,
+				"x": 18,
+				"y": 0
+			},
+			"id": 11,
+			"options": {
+				"orientation": "auto",
+				"reduceOptions": {
+					"calcs": ["lastNotNull"],
+					"fields": "",
+					"values": false
+				},
+				"showThresholdLabels": false,
+				"showThresholdMarkers": true
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"parsedQuery": "telemetry.telemetry.find({}, {\"Brake\":1,\"_id\":0})",
+					"query": "telemetry.telemetry.find({}, {Brake: 1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Brake",
+			"type": "gauge"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "thresholds"
+					},
+					"mappings": [
+						{
+							"options": {
+								"0": {
+									"color": "red",
+									"index": 0,
+									"text": "Chiuso"
+								},
+								"1": {
+									"color": "green",
+									"index": 1,
+									"text": "Aperto"
+								}
+							},
+							"type": "value"
+						}
+					],
+					"thresholds": {
+						"mode": "percentage",
+						"steps": [
+							{
+								"color": "red",
+								"value": null
+							},
+							{
+								"color": "green",
+								"value": 50
+							}
+						]
+					}
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 3,
+				"x": 21,
+				"y": 0
+			},
+			"id": 13,
+			"options": {
+				"orientation": "auto",
+				"reduceOptions": {
+					"calcs": ["lastNotNull"],
+					"fields": "",
+					"values": false
+				},
+				"showThresholdLabels": false,
+				"showThresholdMarkers": true
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"parsedQuery": "telemetry.telemetry.find({}, {\"DRS\":1,\"_id\":0})",
+					"query": "telemetry.telemetry.find({}, {DRS: 1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "DRS",
+			"type": "gauge"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "continuous-RdYlGr"
+					},
+					"custom": {
+						"axisCenteredZero": false,
+						"axisColorMode": "text",
+						"axisLabel": "",
+						"axisPlacement": "auto",
+						"barAlignment": 0,
+						"drawStyle": "line",
+						"fillOpacity": 0,
+						"gradientMode": "scheme",
+						"hideFrom": {
+							"legend": false,
+							"tooltip": false,
+							"viz": false
+						},
+						"lineInterpolation": "linear",
+						"lineStyle": {
+							"fill": "solid"
+						},
+						"lineWidth": 2,
+						"pointSize": 5,
+						"scaleDistribution": {
+							"type": "linear"
+						},
+						"showPoints": "auto",
+						"spanNulls": false,
+						"stacking": {
+							"group": "A",
+							"mode": "none"
+						},
+						"thresholdsStyle": {
+							"mode": "off"
+						}
+					},
+					"mappings": [],
+					"max": 380,
+					"min": 0,
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							},
+							{
+								"color": "red",
+								"value": 80
+							}
+						]
+					}
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 8,
+				"w": 24,
+				"x": 0,
+				"y": 5
+			},
+			"id": 1,
+			"options": {
+				"legend": {
+					"calcs": [],
+					"displayMode": "list",
+					"placement": "bottom",
+					"showLegend": true
+				},
+				"tooltip": {
+					"mode": "single",
+					"sort": "none"
+				}
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"key": "Q-aa5b2857-27be-4888-a96b-556931d3ace1-0",
+					"parsedQuery": "telemetry.telemetry.find({}, {Time: 1, Speed:1, _id:0})",
+					"query": "telemetry.telemetry.find({}, {Time: 1, Speed:1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Speed",
+			"transformations": [
+				{
+					"id": "convertFieldType",
+					"options": {
+						"conversions": [
+							{
+								"dateFormat": "HH:mm:ss.SSSZ",
+								"destinationType": "time",
+								"targetField": "Time"
+							}
+						],
+						"fields": {}
+					}
+				}
+			],
+			"type": "timeseries"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "continuous-GrYlRd"
+					},
+					"custom": {
+						"axisCenteredZero": false,
+						"axisColorMode": "text",
+						"axisLabel": "",
+						"axisPlacement": "auto",
+						"barAlignment": 0,
+						"drawStyle": "line",
+						"fillOpacity": 0,
+						"gradientMode": "scheme",
+						"hideFrom": {
+							"legend": false,
+							"tooltip": false,
+							"viz": false
+						},
+						"lineInterpolation": "smooth",
+						"lineWidth": 2,
+						"pointSize": 5,
+						"scaleDistribution": {
+							"type": "linear"
+						},
+						"showPoints": "auto",
+						"spanNulls": false,
+						"stacking": {
+							"group": "A",
+							"mode": "none"
+						},
+						"thresholdsStyle": {
+							"mode": "off"
+						}
+					},
+					"mappings": [],
+					"min": 5000,
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							},
+							{
+								"color": "red",
+								"value": 80
+							}
+						]
+					}
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 8,
+				"w": 12,
+				"x": 0,
+				"y": 13
+			},
+			"id": 3,
+			"options": {
+				"legend": {
+					"calcs": [],
+					"displayMode": "list",
+					"placement": "bottom",
+					"showLegend": true
+				},
+				"tooltip": {
+					"mode": "single",
+					"sort": "none"
+				}
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"key": "Q-aa5b2857-27be-4888-a96b-556931d3ace1-0",
+					"parsedQuery": "telemetry.telemetry.find({}, {RPM:1, Time:1, _id:0})",
+					"query": "telemetry.telemetry.find({}, {RPM:1, Time:1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "RPM",
+			"transformations": [
+				{
+					"id": "convertFieldType",
+					"options": {
+						"conversions": [
+							{
+								"dateFormat": "HH:mm:ss.SSSZ",
+								"destinationType": "time",
+								"targetField": "Time"
+							}
+						],
+						"fields": {}
+					}
+				}
+			],
+			"type": "timeseries"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "fixed"
+					},
+					"custom": {
+						"axisCenteredZero": false,
+						"axisColorMode": "text",
+						"axisLabel": "",
+						"axisPlacement": "auto",
+						"barAlignment": 0,
+						"drawStyle": "line",
+						"fillOpacity": 25,
+						"gradientMode": "opacity",
+						"hideFrom": {
+							"legend": false,
+							"tooltip": false,
+							"viz": false
+						},
+						"lineInterpolation": "linear",
+						"lineStyle": {
+							"fill": "solid"
+						},
+						"lineWidth": 1,
+						"pointSize": 5,
+						"scaleDistribution": {
+							"type": "linear"
+						},
+						"showPoints": "auto",
+						"spanNulls": false,
+						"stacking": {
+							"group": "A",
+							"mode": "none"
+						},
+						"thresholdsStyle": {
+							"mode": "off"
+						}
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							}
+						]
+					}
+				},
+				"overrides": [
+					{
+						"matcher": {
+							"id": "byName",
+							"options": "Throttle"
+						},
+						"properties": [
+							{
+								"id": "color",
+								"value": {
+									"fixedColor": "green",
+									"mode": "fixed"
+								}
+							}
+						]
+					},
+					{
+						"matcher": {
+							"id": "byName",
+							"options": "Brake"
+						},
+						"properties": [
+							{
+								"id": "color",
+								"value": {
+									"fixedColor": "red",
+									"mode": "fixed"
+								}
+							}
+						]
+					}
+				]
+			},
+			"gridPos": {
+				"h": 8,
+				"w": 12,
+				"x": 12,
+				"y": 13
+			},
+			"id": 2,
+			"options": {
+				"legend": {
+					"calcs": [],
+					"displayMode": "list",
+					"placement": "bottom",
+					"showLegend": true
+				},
+				"tooltip": {
+					"mode": "single",
+					"sort": "none"
+				}
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"key": "Q-aa5b2857-27be-4888-a96b-556931d3ace1-0",
+					"parsedQuery": "telemetry.telemetry.find({}, {Throttle:1, Brake:1, Time:1, _id:0})",
+					"query": "telemetry.telemetry.find({}, {Throttle:1, Brake:1, Time:1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Throttle & Brake",
+			"transformations": [
+				{
+					"id": "convertFieldType",
+					"options": {
+						"conversions": [
+							{
+								"dateFormat": "HH:mm:ss.SSSZ",
+								"destinationType": "time",
+								"targetField": "Time"
+							},
+							{
+								"destinationType": "boolean",
+								"targetField": "Brake"
+							}
+						],
+						"fields": {}
+					}
+				}
+			],
+			"type": "timeseries"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "palette-classic"
+					},
+					"custom": {
+						"axisCenteredZero": false,
+						"axisColorMode": "text",
+						"axisLabel": "",
+						"axisPlacement": "auto",
+						"barAlignment": 0,
+						"drawStyle": "line",
+						"fillOpacity": 25,
+						"gradientMode": "none",
+						"hideFrom": {
+							"legend": false,
+							"tooltip": false,
+							"viz": false
+						},
+						"lineInterpolation": "linear",
+						"lineWidth": 1,
+						"pointSize": 5,
+						"scaleDistribution": {
+							"type": "linear"
+						},
+						"showPoints": "auto",
+						"spanNulls": false,
+						"stacking": {
+							"group": "A",
+							"mode": "none"
+						},
+						"thresholdsStyle": {
+							"mode": "off"
+						}
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							},
+							{
+								"color": "red",
+								"value": 80
+							}
+						]
+					}
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 12,
+				"x": 0,
+				"y": 21
+			},
+			"id": 4,
+			"options": {
+				"legend": {
+					"calcs": [],
+					"displayMode": "list",
+					"placement": "bottom",
+					"showLegend": true
+				},
+				"tooltip": {
+					"mode": "single",
+					"sort": "none"
+				}
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"key": "Q-aa5b2857-27be-4888-a96b-556931d3ace1-0",
+					"parsedQuery": "telemetry.telemetry.find({}, {nGear:1, Time:1, _id:0})",
+					"query": "telemetry.telemetry.find({}, {nGear:1, Time:1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "Gear",
+			"transformations": [
+				{
+					"id": "convertFieldType",
+					"options": {}
+				}
+			],
+			"type": "timeseries"
+		},
+		{
+			"datasource": {
+				"type": "grafana-mongodb-datasource",
+				"uid": "lKk5qAaVk"
+			},
+			"fieldConfig": {
+				"defaults": {
+					"color": {
+						"mode": "palette-classic"
+					},
+					"custom": {
+						"axisCenteredZero": false,
+						"axisColorMode": "text",
+						"axisLabel": "",
+						"axisPlacement": "auto",
+						"barAlignment": 0,
+						"drawStyle": "line",
+						"fillOpacity": 25,
+						"gradientMode": "none",
+						"hideFrom": {
+							"legend": false,
+							"tooltip": false,
+							"viz": false
+						},
+						"lineInterpolation": "linear",
+						"lineWidth": 1,
+						"pointSize": 5,
+						"scaleDistribution": {
+							"type": "linear"
+						},
+						"showPoints": "auto",
+						"spanNulls": false,
+						"stacking": {
+							"group": "A",
+							"mode": "none"
+						},
+						"thresholdsStyle": {
+							"mode": "off"
+						}
+					},
+					"mappings": [],
+					"thresholds": {
+						"mode": "absolute",
+						"steps": [
+							{
+								"color": "green",
+								"value": null
+							},
+							{
+								"color": "red",
+								"value": 80
+							}
+						]
+					}
+				},
+				"overrides": []
+			},
+			"gridPos": {
+				"h": 5,
+				"w": 12,
+				"x": 12,
+				"y": 21
+			},
+			"id": 6,
+			"options": {
+				"legend": {
+					"calcs": [],
+					"displayMode": "list",
+					"placement": "bottom",
+					"showLegend": true
+				},
+				"tooltip": {
+					"mode": "single",
+					"sort": "none"
+				}
+			},
+			"pluginVersion": "9.4.7",
+			"targets": [
+				{
+					"datasource": {
+						"type": "grafana-mongodb-datasource",
+						"uid": "lKk5qAaVk"
+					},
+					"key": "Q-aa5b2857-27be-4888-a96b-556931d3ace1-0",
+					"parsedQuery": "telemetry.telemetry.find({}, {DRS:1, Time:1, _id:0})",
+					"query": "telemetry.telemetry.find({}, {DRS:1, Time:1, _id:0})",
+					"queryType": "query",
+					"refId": "A"
+				}
+			],
+			"title": "DRS",
+			"transformations": [
+				{
+					"id": "convertFieldType",
+					"options": {}
+				}
+			],
+			"type": "timeseries"
+		}
+	],
+	"refresh": "5s",
+	"revision": 1,
+	"schemaVersion": 38,
+	"style": "dark",
+	"tags": [],
+	"templating": {
+		"list": []
+	},
+	"time": {
+		"from": "2023-03-22T23:00:00.000Z",
+		"to": "2023-03-22T23:01:20.000Z"
+	},
+	"timepicker": {
+		"refresh_intervals": ["5s"]
+	},
+	"timezone": "",
+	"title": "Progetto BD",
+	"uid": "dxIcIJa4z",
+	"version": 20,
+	"weekStart": ""
+}

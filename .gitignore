@@ -1,0 +1,6 @@
+/01GetTelemetry/cache
+/03Consumer/checkpoint
+/metastore_db
+/venv
+pyvenv.cfg
+/derby.log
