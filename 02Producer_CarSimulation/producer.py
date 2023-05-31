@@ -1,16 +1,19 @@
 # File che si occupa di leggere i dati dalla telemetria dal .csv e di inviarli a Kafka (topic input_telemetry)
 
+# Import necessari
 from time import sleep
 from json import dumps
 from kafka import KafkaProducer
 from datetime import datetime
 import csv
 
+# Creazione del producer di Kafka
 producer = KafkaProducer(
     bootstrap_servers=['localhost:9092'], 
     value_serializer=lambda x: dumps(x).encode('utf-8'),
     key_serializer=lambda x: dumps(x).encode('utf-8'))
 
+# Lettura del file .csv e invio dei dati a Kafka
 with open('../01GetTelemetry/telemetry.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
@@ -19,7 +22,7 @@ with open('../01GetTelemetry/telemetry.csv') as csv_file:
             line_count += 1
         
         else:
-            rowData = {}
+            rowData = {} # Dizionario che contiene i dati da inviare a Kafka
            
             rowData['Time'] = row[1].split(" ")[2]
             rowData['Time'] = datetime.strptime(rowData['Time'], '%H:%M:%S.%f') if "." in rowData['Time'] else datetime.strptime(rowData['Time'], '%H:%M:%S')
@@ -33,8 +36,9 @@ with open('../01GetTelemetry/telemetry.csv') as csv_file:
             rowData['DRS'] = 1 if (int(row[7]) == 12) else 0
             rowData['Distance'] = float(row[8])
             
+            # Invio dei dati a Kafka
             producer.send('input_telemetry', value=rowData)
             
             line_count += 1
             print(rowData)
-            sleep(0.15) #0.15
+            sleep(0.15) # Sleep per simulare il tempo di acquisizione dei dati
