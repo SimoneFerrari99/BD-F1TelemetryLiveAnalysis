@@ -30,10 +30,8 @@
 # Avvio
 
 -   jupyther-lab: `jupyter-lab`
--   Creazione utenze:
 
 # Avvio del progetto
-
 -   Avviare container docker
 -   Creare topic kafka
 -   Creare venv
@@ -42,4 +40,4 @@
 -   Avviare su un terminale il `python3 02Producer_CarSimulation/producer.py`
 -   Avviare Jupyther-lab: `jupyter-lab`
 -   Avviare su un secondo terminale il consumer `spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2 consumerSpark.py`
--   Avviare la dashboard grafana e visualizzare `TBD`
+-   Avviare la dashboard grafana e visualizzare i dati
