@@ -20,7 +20,7 @@ if __name__ == "__main__":
     spark.sparkContext.setLogLevel("OFF")
 
     # STEP 2 : Letture dei dati da Kafka in formato streaming
-    sampleDataframe = (
+    df = (
         spark.readStream.format("kafka")
         .option("kafka.bootstrap.servers", KAFKA_BOOTSTRAP_SERVERS)
         .option("subscribe", KAFKA_TOPIC_NAME)
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # Lo schema viene applicato ai dati letti da Kafka e vengono selezionati solo i campi che ci interessano (tutti)
 
     # STEP 4 : Scrittura dei dati in output
-    sampleDataframe.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
+    df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
         .writeStream \
         .format("kafka") \
         .option("kafka.bootstrap.servers", KAFKA_BOOTSTRAP_SERVERS) \
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     
     # Questo codice serve per stampare i dati in console (utile per debug), ma non è necessario per il progetto. 
     # Se si vuole utilizzare, basta decommentare le righe sotto e commentare quelle sopra relative allo step 4.
-    # sampleDataframe.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
+    # df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
     #     .writeStream \
     #     .format("console") \
     #     .outputMode("append") \
